@@ -1,9 +1,15 @@
 import "./App.css";
+import Form from "./components/Form";
+import ToDoList from "./components/ToDoList";
 
 function App() {
   return (
     <div className="App">
-      <h1>Hello react</h1>
+      <header>
+        <h1>Rob's Todo List</h1>
+      </header>
+      <Form />
+      <ToDoList />
     </div>
   );
 }

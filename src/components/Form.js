@@ -1,6 +1,6 @@
 import React from "react";
 
-const Form = ({ inputText, setInputText, todos, setTodos }) => {
+const Form = ({ inputText, setInputText, todos, setTodos, setStatus }) => {
   const inputTextHandler = (event) => {
     setInputText(event.target.value);
   };
@@ -12,6 +12,10 @@ const Form = ({ inputText, setInputText, todos, setTodos }) => {
       { text: inputText, completed: false, id: Math.random() * 1000 },
     ]);
     setInputText("");
+  };
+
+  const statusHandler = (event) => {
+    setStatus(event.target.value);
   };
 
   return (
@@ -26,7 +30,7 @@ const Form = ({ inputText, setInputText, todos, setTodos }) => {
         <i className="fa-regular fa-square-plus"></i>
       </button>
       <div className="select">
-        <select name="todos" className="filter-todo">
+        <select onChange={statusHandler} name="todos" className="filter-todo">
           <option value="all">All</option>
           <option value="complete">Complete</option>
           <option value="incomplete">Incomplete</option>
